@@ -1,0 +1,22 @@
+.task-title {
+	font-weight: 500;
+	transition: color 120ms;
+}
+/* A closed title recedes: it loses ink with its check, so in a mixed list the open tasks are the dark ones. */
+.task-title[data-closed] {
+	color: var(--mantine-color-dimmed);
+}
+/* The title colors while its link is hovered, whether the link is the title alone or a whole row. */
+a:hover .task-title,
+a:focus-visible .task-title {
+	color: var(--mantine-primary-color-filled);
+}
+.task-title-check {
+	vertical-align: -0.125em;
+	margin-right: 0.25em;
+}
+@media (prefers-reduced-motion: reduce) {
+	.task-title {
+		transition: none;
+	}
+}

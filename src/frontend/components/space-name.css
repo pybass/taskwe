@@ -1,0 +1,6 @@
+/* The folder before the name: on the text's center, scaling with it, and dimmed. */
+.space-name-icon {
+	vertical-align: -0.2em;
+	margin-right: 0.05em;
+	color: var(--mantine-color-dimmed);
+}

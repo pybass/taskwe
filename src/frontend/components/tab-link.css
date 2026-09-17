@@ -1,0 +1,61 @@
+/* The tabs of a list toolbar as text on one baseline, the current one in the text color with a short rule under it.
+   The figures are tabular, so a count that changes does not shift the tab next to it. */
+.tab-bar {
+	display: flex;
+	gap: var(--mantine-spacing-xl);
+}
+/* Below Mantine's `sm`: a phone fits the tabs with their counts only at the smaller gap. */
+@media (max-width: 47.99em) {
+	.tab-bar {
+		gap: var(--mantine-spacing-md);
+	}
+}
+/* Sets a toggle apart from the tabs. */
+.tab-bar-rule {
+	align-self: center;
+	height: 1em;
+	border-left: 1px solid var(--mantine-color-default-border);
+}
+.tab {
+	display: inline-flex;
+	align-items: center;
+	/* In px, and asymmetric so the 2px underline counts toward the bottom: the text sits centered in the tab. */
+	padding: 10px 0 8px;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	background: none;
+	color: var(--mantine-color-dimmed);
+	text-decoration: none;
+	font: inherit;
+	font-size: var(--mantine-font-size-sm);
+	font-weight: 500;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	cursor: pointer;
+	transition: color 120ms;
+}
+.tab:hover,
+.tab:focus-visible {
+	color: var(--mantine-color-text);
+}
+/* Mantine's focus ring instead of the browser's, so the tabs match the buttons around them. */
+.tab:focus-visible {
+	outline: 2px solid var(--mantine-primary-color-filled);
+	outline-offset: 2px;
+	border-radius: var(--mantine-radius-sm);
+}
+.tab[data-current],
+.tab[data-expanded] {
+	color: var(--mantine-color-text);
+	border-bottom-color: var(--mantine-primary-color-filled);
+}
+.tab-count {
+	font-weight: 400;
+	margin-left: 0.35em;
+	opacity: 0.75;
+}
+@media (prefers-reduced-motion: reduce) {
+	.tab {
+		transition: none;
+	}
+}

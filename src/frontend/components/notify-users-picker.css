@@ -1,0 +1,9 @@
+/* The button sits in a one-line row: it shrinks before the row wraps, and the names cut with an ellipsis. */
+.notify-users-picker {
+	min-width: 0;
+}
+
+.notify-users-picker-names {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

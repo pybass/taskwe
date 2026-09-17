@@ -1,0 +1,22 @@
+/* An editable comment shows its pencil faintly until hovered or focused, so the activity reads as content, not as a form. */
+.comment-entry[data-editable] .comment-entry-pencil {
+	opacity: 0.35;
+	transition: opacity 120ms;
+}
+.comment-entry[data-editable]:hover .comment-entry-pencil,
+.comment-entry[data-editable]:focus-within .comment-entry-pencil {
+	opacity: 1;
+}
+/* The comment a link points at, from a search: tinted, with the tint's padding taken back so the text stays in place.
+   `:target` would not do: the router moves the hash with pushState, which does not update it. */
+.comment-entry[data-target] {
+	background: var(--mantine-color-yellow-light);
+	border-radius: var(--mantine-radius-sm);
+	padding: var(--mantine-spacing-xs);
+	margin: calc(-1 * var(--mantine-spacing-xs));
+}
+@media (prefers-reduced-motion: reduce) {
+	.comment-entry[data-editable] .comment-entry-pencil {
+		transition: none;
+	}
+}

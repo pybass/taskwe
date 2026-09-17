@@ -1,0 +1,6 @@
+/* What a backup holds: a space per line, its name at the left and its task count right-aligned in a narrow column. */
+.backups-page-spaces {
+	display: grid;
+	grid-template-columns: auto max-content;
+	column-gap: var(--mantine-spacing-sm);
+}

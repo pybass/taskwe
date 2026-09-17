@@ -1,0 +1,7 @@
+/* With `compact`: an excerpt quoted in a feed, where paragraphs and lists sit closer than in a task body. */
+.markdown-compact :is(p, ul, ol) {
+	margin-bottom: var(--mantine-spacing-xs);
+}
+.markdown-compact :is(p, ul, ol):last-child {
+	margin-bottom: 0;
+}

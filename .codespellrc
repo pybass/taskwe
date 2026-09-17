@@ -1,0 +1,4 @@
+[codespell]
+skip = bun.lock
+# useSpace is a hook name, not "userspace"; matched in lowercase.
+ignore-words-list = usespace

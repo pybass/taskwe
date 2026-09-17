@@ -1,0 +1,82 @@
+/* A task row of a list, a link laid out as a grid: the number in a rail on the left, then the title line with the
+   facts at its right end, and under them the origin sentence with the assignee at its right end, then the line a list
+   may add, whose row is empty without one. The cells sit on the title's baseline, so the numbers line up down the
+   list. A hairline between rows is the only structure, so the rows stay inside the column and the rules line up with
+   the toolbar. */
+.task-row {
+	display: grid;
+	grid-template-columns: 3.25em minmax(0, 1fr) auto;
+	grid-template-areas:
+		"number head facts"
+		"number meta aside"
+		"number extra extra";
+	column-gap: var(--mantine-spacing-md);
+	align-items: baseline;
+	padding: var(--mantine-spacing-sm) 0;
+	color: inherit;
+	text-decoration: none;
+	font-size: var(--mantine-font-size-sm);
+	line-height: var(--mantine-line-height);
+}
+.task-row + .task-row {
+	border-top: 1px solid var(--mantine-color-default-border);
+}
+.task-row-number,
+.task-row-facts,
+.task-row-meta,
+.task-row-aside {
+	font-size: var(--mantine-font-size-xs);
+	color: var(--mantine-color-dimmed);
+}
+.task-row-number {
+	grid-area: number;
+	font-variant-numeric: tabular-nums;
+}
+/* Running text: the labels follow the title's last word and wrap with it, instead of dropping under a long title. */
+.task-row-head {
+	grid-area: head;
+}
+/* The right column is as wide as its widest cell, so both cells hug the right edge, whatever the other's width. */
+.task-row-facts,
+.task-row-aside {
+	justify-self: end;
+	white-space: nowrap;
+}
+.task-row-facts {
+	grid-area: facts;
+	display: flex;
+	gap: var(--mantine-spacing-md);
+}
+.task-row-meta {
+	grid-area: meta;
+}
+.task-row-aside {
+	grid-area: aside;
+}
+.task-row-extra {
+	grid-area: extra;
+}
+/* Below `sm` the rail and the right column go, or the title would get half the screen: the title spans the row, then
+   the facts on the left with the assignee at the right end, then the origin sentence with the number at its end,
+   then the added line. */
+@media (max-width: 47.99em) {
+	.task-row {
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas:
+			"head head"
+			"facts aside"
+			"meta number"
+			"extra extra";
+	}
+	.task-row-facts {
+		justify-self: start;
+	}
+	.task-row-number {
+		justify-self: end;
+	}
+}
+/* An inline icon before a figure, sized and aligned with the text. */
+.task-row-icon {
+	vertical-align: -0.125em;
+	margin-right: 0.25em;
+}

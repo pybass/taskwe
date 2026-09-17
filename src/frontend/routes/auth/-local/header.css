@@ -1,0 +1,9 @@
+/* New task below `sm`: fixed in the bottom right corner, over the page and under Mantine's popovers and modals,
+   lifted by a shadow from the list it floats on. The auth layout keeps room under the footer for it. */
+.header-fab {
+	position: fixed;
+	right: var(--mantine-spacing-md);
+	bottom: var(--mantine-spacing-md);
+	z-index: 100;
+	box-shadow: var(--mantine-shadow-md);
+}

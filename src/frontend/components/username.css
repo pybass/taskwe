@@ -1,0 +1,10 @@
+/* The icon before the name: on the text's center, scaling with it, and dimmed like any mark. */
+.username-icon {
+	vertical-align: -0.2em;
+	margin-right: 0.05em;
+	color: var(--mantine-color-dimmed);
+}
+/* The filled mark of the person who holds the task. */
+.username-icon[data-assignee] {
+	color: var(--mantine-primary-color-filled);
+}

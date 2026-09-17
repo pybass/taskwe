@@ -1,0 +1,22 @@
+/* The classes no one component owns: the shells a page lays its components in. main.tsx imports this file after
+   Mantine's styles. Everything else is styled in the component's own file, next to it. */
+
+/* The toolbar of a list page: the tabs, and any toggle beside them. */
+.list-toolbar {
+	display: flex;
+	align-items: center;
+	gap: var(--mantine-spacing-xl);
+	margin-top: var(--mantine-spacing-sm);
+	margin-bottom: var(--mantine-spacing-lg);
+}
+/* Below Mantine's `sm`: a phone fits the tabs with their counts only at the smaller gap. */
+@media (max-width: 47.99em) {
+	.list-toolbar {
+		gap: var(--mantine-spacing-md);
+	}
+}
+/* The column of task rows a page renders; a row's hairline is the only structure between them. */
+.task-list {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,0 +1,16 @@
+/* A change line of the task's activity: one step smaller than a comment, and indented under the messages with the
+   history icon in a gutter, centered on the first line of text: `1lh` is that line's height. */
+.task-activity-change {
+	display: grid;
+	grid-template-columns: 1.25em minmax(0, 1fr);
+	column-gap: var(--mantine-spacing-xs);
+	font-size: var(--mantine-font-size-xs);
+	line-height: var(--mantine-line-height);
+	padding-left: var(--mantine-spacing-sm);
+}
+.task-activity-change-icon {
+	display: flex;
+	align-items: center;
+	height: 1lh;
+	color: var(--mantine-color-dimmed);
+}

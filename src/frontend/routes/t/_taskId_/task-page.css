@@ -1,0 +1,5 @@
+/* The check before a closed task's title: on the text's center, with a little air before the title. */
+.task-page-closed-icon {
+	vertical-align: -0.1em;
+	margin-right: 0.2em;
+}

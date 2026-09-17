@@ -1,0 +1,82 @@
+/* One task of the feed: the title line, then one row per event. Each line is its own grid with the same first column,
+   a rail of 5.5em that fits "18 Sep 2025" in the small size, so the number beside the title and the date beside each
+   event line up down the feed. A hairline between blocks is the only structure, as in the task list. */
+.activity-block {
+	display: flex;
+	flex-direction: column;
+	/* In px: less than the smallest spacing step, so the lines of one task read as one block. */
+	gap: 4px;
+	padding: var(--mantine-spacing-sm) 0;
+	font-size: var(--mantine-font-size-sm);
+	line-height: var(--mantine-line-height);
+}
+.activity-block + .activity-block {
+	border-top: 1px solid var(--mantine-color-default-border);
+}
+/* The number in the rail, the title with its labels in running text, and the space at the right end, where the names
+   line up down the feed. */
+.activity-block-head {
+	display: grid;
+	grid-template-columns: 5.5em minmax(0, 1fr) auto;
+	grid-template-areas: "number title space";
+	column-gap: var(--mantine-spacing-md);
+	align-items: baseline;
+}
+.activity-block-number,
+.activity-block-date {
+	font-size: var(--mantine-font-size-xs);
+	color: var(--mantine-color-dimmed);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.activity-block-number {
+	grid-area: number;
+}
+.activity-block-title {
+	grid-area: title;
+}
+.activity-block-space {
+	grid-area: space;
+}
+/* The date in the rail, then the sentence and the quote under it. */
+.activity-block-event {
+	display: grid;
+	grid-template-columns: 5.5em minmax(0, 1fr);
+	grid-template-areas: "date body";
+	column-gap: var(--mantine-spacing-md);
+	align-items: baseline;
+}
+.activity-block-date {
+	grid-area: date;
+}
+.activity-block-body {
+	grid-area: body;
+}
+/* Below `sm` the rail goes, or the title would get half the screen: the title spans the line, then the space with the
+   number at its end, then each event with its date at the end of its first line, as in the task row. */
+@media (max-width: 47.99em) {
+	.activity-block-head {
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas:
+			"title title"
+			"space number";
+		/* The same 4px as the block's gap: the second line of the head is one of its lines. */
+		row-gap: 4px;
+	}
+	.activity-block-number {
+		justify-self: end;
+	}
+	.activity-block-event {
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas: "body date";
+	}
+}
+/* The text a change added, quoted under its sentence: the rule marks quoted text and nothing else. The excerpt is
+   context, not the news, so it is small and dimmed; the Markdown component's `compact` tightens its paragraphs. */
+.activity-block-quote {
+	/* In px: a hair of air between the sentence and the quote, less than any spacing step. */
+	margin-top: 2px;
+	padding-left: var(--mantine-spacing-sm);
+	/* 2px: thicker than the hairlines between blocks, so it reads as a quote rule and not as a border. */
+	border-left: 2px solid var(--mantine-color-default-border);
+}
