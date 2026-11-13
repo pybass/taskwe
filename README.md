@@ -18,11 +18,11 @@ A simple task management system for families and small teams. One binary, one SQ
 `just build` makes `dist/taskwe` for Linux x64; `just build bun-linux-arm64` for arm64. The settings are environment
 variables:
 
-| Variable    | Default             | Meaning                                                                        |
-| ----------- | ------------------- | ------------------------------------------------------------------------------ |
-| `DATA_PATH` | `data`              | The folder of `taskwe.db` and `backups/`, created when missing.                |
-| `HOST`      | `127.0.0.1`         | The address to listen on.                                                      |
-| `PORT`      | `3000`              | The port to listen on.                                                         |
+| Variable    | Default             | Meaning                                                                                  |
+| ----------- | ------------------- | ---------------------------------------------------------------------------------------- |
+| `DATA_PATH` | `data`              | The folder of `taskwe.db` and `backups/`, created when missing.                          |
+| `HOST`      | `127.0.0.1`         | The address to listen on.                                                                |
+| `PORT`      | `3000`              | The port to listen on.                                                                   |
 | `SITE_URL`  | `https://localhost` | The public address: `https:` makes the session cookie `Secure`, and every push names it. |
 
 The first start creates the database with the user `admin`, password `admin`. Change it after the first login.
@@ -30,7 +30,7 @@ The first start creates the database with the user `admin`, password `admin`. Ch
 
 ## Development
 
-`just` lists the recipes. `just sync` installs; `just dev` runs the server on port 3000 against `data/taskwe.db`,
+`just` lists the recipes. `just sync` installs; `just dev` runs the server on port 3200 against `data/taskwe.db`,
 `just dev 3001` on another port; `just seed` fills the database with demo data; `just check` runs the lint, the type
 checks, and the tests. A release is a tag: bump `version` in `package.json`, commit, push, then `just release` checks
 and tags `v<version>`.

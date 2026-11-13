@@ -1,6 +1,7 @@
 # AI Agent Start Guide
 
 ## Critical: Answers
+
 Be brief. Use simple English: common words, short sentences.
 Give the result, not the reasoning behind it. Say only what the user needs to act
 or to avoid a mistake — no preamble, no recap, no filler. Go into detail only when asked.
@@ -8,16 +9,21 @@ or to avoid a mistake — no preamble, no recap, no filler. Go into detail only 
 All code, comments, commit messages, and files must ALWAYS be in English — no exceptions.
 
 ## Prototype mode
+
 The project is a prototype. Do not write tests unless the user asks for them in the task.
 
 ## Mandatory Rules (external)
+
 Read these files fully and follow them.
-- `~/.claude/rules/general.md`
-- `~/.claude/rules/code.md`
-- `~/.claude/rules/typescript.md`
+
+- `~/.agents/rules/general.md`
+- `~/.agents/rules/code.md`
+- `~/.agents/rules/typescript.md`
 
 ## Project Reading (context)
+
 Read these before the first task; do not answer until you have.
+
 - `README.md`
 - `docs/domain.md`
 - `docs/architecture.md`

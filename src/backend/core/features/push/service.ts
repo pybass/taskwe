@@ -1,5 +1,5 @@
 import { generateKeyPairSync } from "node:crypto";
-import webpush from "web-push";
+import { sendNotification, WebPushError } from "web-push";
 import { z } from "zod";
 import type { TaskChanges } from "#shared/event.ts";
 import type { PushPayload } from "#shared/push.ts";
@@ -84,7 +84,7 @@ export class PushService {
 			try {
 				// TTL in seconds: a phone off the network for a day still gets it; the badge it sets is corrected on open.
 				// The timeout is the socket's, in ms: a push service that stops answering does not hold the send for good.
-				await webpush.sendNotification(subscription, payload, {
+				await sendNotification(subscription, payload, {
 					vapidDetails,
 					TTL: 24 * 60 * 60,
 					urgency: "high",
@@ -94,7 +94,7 @@ export class PushService {
 			} catch (error) {
 				// The endpoint is a secret, and a WebPushError carries it, so the error is never logged whole.
 				const host = new URL(subscription.endpoint).host;
-				if (error instanceof webpush.WebPushError) {
+				if (error instanceof WebPushError) {
 					console.error(`Push to ${host} failed: ${error.statusCode} ${error.body}`);
 					// 404 and 410: the browser dropped the subscription. 403: it was made with another server key, so no
 					// push will ever reach it; the app subscribes again on its next open and sends the new one.

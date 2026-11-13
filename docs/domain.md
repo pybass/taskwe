@@ -22,11 +22,11 @@ This is the summary. Every rule lives in a reference file in the code, listed in
 
 A space holds tasks. A member of a space has one of three roles:
 
-| Role      | Can                                                                          |
-| --------- | ---------------------------------------------------------------------------- |
+| Role      | Can                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------- |
 | `manager` | Everything: the member list and roles, labels, moving a task out, and all an editor can. |
-| `editor`  | Create tasks; edit, close, assign, and label any task; comment.              |
-| `viewer`  | Read only.                                                                   |
+| `editor`  | Create tasks; edit, close, assign, and label any task; comment.                          |
+| `viewer`  | Read only.                                                                               |
 
 - Each user has a personal space. It is created with the user, who is its owner, its only member, and its manager,
   for good. Its name and slug are the username.
@@ -228,21 +228,21 @@ Nothing runs on a schedule: the app makes a backup when asked, and at start befo
 
 ## Pages
 
-| Page                    | Shows                                                                               |
-| ----------------------- | ----------------------------------------------------------------------------------- |
-| `/`                     | Home, three tabs: My tasks, the user's open tasks as one list, the due within 3 days first, not paged; Notifications, the user's unread; Activity, what changed lately in the user's spaces. |
-| `/s/{slug}`             | The tasks of a space, filtered and sorted by the URL, so a view is a link.          |
-| `/t/{number}`           | One task: its body, its events with the comments, and the update form.              |
-| `/search`               | The search results over the user's spaces, by status and space, as a link.          |
-| `/t/new`                | A new task, in a space the user edits, picked in the form. The header's "New task" leads here from every page; a space page presets its space. |
-| `/s/{slug}/labels`      | The labels of a space, for a manager.                                               |
-| `/spaces/new`           | A new shared space.                                                                 |
-| `/s/{slug}/members`     | The members of a space, for a manager.                                              |
-| `/password`             | Change your own password.                                                           |
-| `/admin/labels`         | The global labels, for an admin.                                                    |
-| `/admin/users`          | Users: add, rename, set the admin flag, set a password.                             |
-| `/admin/spaces`         | The shared spaces with their members: set one's own role, delete.                  |
-| `/admin/tasks/delete`   | Delete a task by number.                                                            |
-| `/admin/backups`        | Backups: whether the database matches the build's schema; the files with what they hold and whether each matches it too, each to rename, download, restore, or delete; a button to make one, a form to upload one. |
+| Page                  | Shows                                                                                                                                                                                                              |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/`                   | Home, three tabs: My tasks, the user's open tasks as one list, the due within 3 days first, not paged; Notifications, the user's unread; Activity, what changed lately in the user's spaces.                       |
+| `/s/{slug}`           | The tasks of a space, filtered and sorted by the URL, so a view is a link.                                                                                                                                         |
+| `/t/{number}`         | One task: its body, its events with the comments, and the update form.                                                                                                                                             |
+| `/search`             | The search results over the user's spaces, by status and space, as a link.                                                                                                                                         |
+| `/t/new`              | A new task, in a space the user edits, picked in the form. The header's "New task" leads here from every page; a space page presets its space.                                                                     |
+| `/s/{slug}/labels`    | The labels of a space, for a manager.                                                                                                                                                                              |
+| `/spaces/new`         | A new shared space.                                                                                                                                                                                                |
+| `/s/{slug}/members`   | The members of a space, for a manager.                                                                                                                                                                             |
+| `/password`           | Change your own password.                                                                                                                                                                                          |
+| `/admin/labels`       | The global labels, for an admin.                                                                                                                                                                                   |
+| `/admin/users`        | Users: add, rename, set the admin flag, set a password.                                                                                                                                                            |
+| `/admin/spaces`       | The shared spaces with their members: set one's own role, delete.                                                                                                                                                  |
+| `/admin/tasks/delete` | Delete a task by number.                                                                                                                                                                                           |
+| `/admin/backups`      | Backups: whether the database matches the build's schema; the files with what they hold and whether each matches it too, each to rename, download, restore, or delete; a button to make one, a form to upload one. |
 
 A personal space's slug is the user's username.

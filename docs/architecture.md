@@ -125,18 +125,18 @@ reference file. Elsewhere it is repeated in at most one line, and never with mor
 A pointer names a symbol, such as `Api.moveTask`, not a file. [domain.md](domain.md) is the summary; a reference
 file is the source of truth.
 
-| File                                          | Holds                                                                      |
-| --------------------------------------------- | -------------------------------------------------------------------------- |
-| `src/backend/core/api.ts`                     | Every operation: who may call it, what it does, its side effects, its errors. |
-| `src/backend/core/db/schema.sql`              | The SQLite schema: what the database enforces, the cascades, the indexes.  |
-| `src/shared/base.ts`                          | The primitives: ids, timestamps, days, slugs, and the conventions of every field. |
-| `src/shared/user.ts`                          | A user, the login body, the create body, and the rename.                   |
-| `src/shared/space.ts`                         | A space, personal or shared, its members with their roles, and the role check both sides use. |
-| `src/shared/label.ts`                         | A label, global or of a space, the bodies that create and change labels, and the order both sides show. |
-| `src/shared/task.ts`                          | A task with its repeat, and the bodies and queries of the task routes.     |
-| `src/shared/comment.ts`                       | A comment and the bodies that add and edit one.                            |
-| `src/shared/event.ts`                         | An event of a task and the changes each write records.                     |
-| `src/shared/search.ts`                        | A text search over the tasks: the query, what a word matches, and the ranked results. |
-| `src/shared/notification.ts`                  | The unread notifications of a user and the bodies that clear them.         |
-| `src/shared/push.ts`                          | Web Push on one device: the server's key, a device's push address, and what a push carries. |
-| `src/shared/backup.ts`                        | A backup file of the database, as the list of backups shows it.            |
+| File                             | Holds                                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `src/backend/core/api.ts`        | Every operation: who may call it, what it does, its side effects, its errors.                           |
+| `src/backend/core/db/schema.sql` | The SQLite schema: what the database enforces, the cascades, the indexes.                               |
+| `src/shared/base.ts`             | The primitives: ids, timestamps, days, slugs, and the conventions of every field.                       |
+| `src/shared/user.ts`             | A user, the login body, the create body, and the rename.                                                |
+| `src/shared/space.ts`            | A space, personal or shared, its members with their roles, and the role check both sides use.           |
+| `src/shared/label.ts`            | A label, global or of a space, the bodies that create and change labels, and the order both sides show. |
+| `src/shared/task.ts`             | A task with its repeat, and the bodies and queries of the task routes.                                  |
+| `src/shared/comment.ts`          | A comment and the bodies that add and edit one.                                                         |
+| `src/shared/event.ts`            | An event of a task and the changes each write records.                                                  |
+| `src/shared/search.ts`           | A text search over the tasks: the query, what a word matches, and the ranked results.                   |
+| `src/shared/notification.ts`     | The unread notifications of a user and the bodies that clear them.                                      |
+| `src/shared/push.ts`             | Web Push on one device: the server's key, a device's push address, and what a push carries.             |
+| `src/shared/backup.ts`           | A backup file of the database, as the list of backups shows it.                                         |
